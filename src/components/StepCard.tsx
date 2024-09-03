@@ -4,6 +4,7 @@ import { FormContext } from "../context/FormContext";
 /* Components Imports */
 import Form from "./Form";
 import Plans from "./Plans";
+import AddOns from "./AddOns";
 
 export default function StepCard() {
   const { currentStep, setCurrentStep, steps, errorForm, nextStep } =
@@ -34,6 +35,7 @@ export default function StepCard() {
         <p className="mb-3 text-lg text-coolGray">{currentStep.description}</p>
         {currentStep.id == 1 && <Form />}
         {currentStep.id == 2 && <Plans />}
+        {currentStep.id == 3 && <AddOns />}
       </div>
       <div className="absolute bottom-0 left-0 w-full bg-white p-4">
         {steps.findIndex(({ id }) => id == currentStep.id) != 0 && (

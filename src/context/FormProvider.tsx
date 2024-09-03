@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FormContext } from "./FormContext";
 
 import { IPlan, IStep, IStepsData, IAddOn } from "../interfaces/interfaces";
@@ -33,18 +33,25 @@ export default function FormProvider({
     },
   });
 
+  useEffect(() => {
+    console.log(stepsData.Step3);
+  }, [stepsData.Step3]);
+
   const nextStep = () => {
     setCurrentStep(
       steps[steps.findIndex(({ id }) => id === currentStep.id) + 1],
     );
   };
 
-  const handleStepData = (step: string, data: unknown) => {
-    setStepsData((prev) => ({
-      ...prev,
-      [step]: data,
-    }));
-  };
+  const handleStepData = useCallback(
+    (step: string, data: unknown) => {
+      setStepsData((prev) => ({
+        ...prev,
+        [step]: data,
+      }));
+    },
+    [setStepsData],
+  );
 
   return (
     <FormContext.Provider

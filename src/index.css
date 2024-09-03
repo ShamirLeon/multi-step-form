@@ -39,3 +39,7 @@
     @apply mb-1 block inline-block text-sm text-marineBlue;
   }
 }
+
+.checkbox {
+  accent-color: #5850ec;
+}
