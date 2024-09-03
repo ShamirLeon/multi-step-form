@@ -33,7 +33,7 @@
     {
       "id": 1,
       "name": "Arcade",
-      "icon": "🕹",
+      "icon": "arcade",
       "price": {
         "monthly": 9,
         "yearly": 90
@@ -42,7 +42,7 @@
     {
       "id": 2,
       "name": "Advanced",
-      "icon": "🕹",
+      "icon": "advanced",
       "price": {
         "monthly": 12,
         "yearly": 120
@@ -51,7 +51,7 @@
     {
       "id": 3,
       "name": "Pro",
-      "icon": "🕹",
+      "icon": "pro",
       "price": {
         "monthly": 15,
         "yearly": 150
