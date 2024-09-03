@@ -8,16 +8,39 @@ import AddOns from "./AddOns";
 import FinishUp from "./FinishUp";
 
 export default function StepCard() {
-  const { currentStep, setCurrentStep, steps, errorForm, nextStep } =
-    useContext(FormContext);
+  const {
+    currentStep,
+    setCurrentStep,
+    steps,
+    errorForm,
+    nextStep,
+    stepsData,
+    setIsConfirmed,
+  } = useContext(FormContext);
+  let btnText = "Next Step";
 
   const nextStepBtn = () => {
-    console.log(errorForm);
+    if (isLastStep()) {
+      btnText = "Confirm";
+      setIsConfirmed(true);
+      return;
+    }
+
     if (currentStep.id == 1 && errorForm) {
+      return;
+    } else if (currentStep.id == 2 && !stepsData.Step2.plan) {
+      return;
+    } else if (currentStep.id == 3 && !stepsData.Step3.addOns.length) {
       return;
     } else {
       nextStep();
     }
+  };
+
+  const isLastStep = () => {
+    return (
+      steps.findIndex(({ id }) => id == currentStep.id) == steps.length - 1
+    );
   };
 
   const goBack = () => {
@@ -51,7 +74,7 @@ export default function StepCard() {
           className="float-right rounded-md bg-marineBlue px-5 py-3 text-white"
           onClick={nextStepBtn}
         >
-          Next Step
+          {btnText}
         </button>
       </div>
     </div>

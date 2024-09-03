@@ -4,6 +4,9 @@ import { FormContext } from "../context/FormContext";
 
 export default function Steps() {
   const { steps, currentStep, setCurrentStep } = useContext(FormContext);
+  const isDisabled = (stepId: number) => {
+    return currentStep.id < stepId;
+  };
   return (
     <div className="relative">
       <img
@@ -15,7 +18,8 @@ export default function Steps() {
           return (
             <div key={step.id}>
               <button
-                className={`h-9 w-9 rounded-full border border-white font-bold hover:border-lightBlue hover:bg-lightBlue hover:text-marineBlue ${currentStep.id == step.id ? "bg-lightBlue text-marineBlue" : "text-white"}`}
+                disabled={isDisabled(step.id)}
+                className={`h-9 w-9 rounded-full border border-white font-bold md:hover:border-lightBlue md:hover:bg-lightBlue md:hover:text-marineBlue ${currentStep.id == step.id ? "bg-lightBlue text-marineBlue" : "text-white"}`}
                 onClick={() => setCurrentStep(step)}
               >
                 {step.id}

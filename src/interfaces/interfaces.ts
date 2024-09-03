@@ -6,6 +6,8 @@ export interface IContext {
   setCurrentStep: (value: IStep) => void;
   errorForm: boolean;
   setErrorForm: (value: boolean) => void;
+  isConfirmed: boolean;
+  setIsConfirmed: (value: boolean) => void;
   stepsData: IStepsData;
   subscriptionType: "monthly" | "yearly";
   setSubscriptionType: (value: "monthly" | "yearly") => void;
@@ -63,4 +65,7 @@ export interface IStepsData {
   Step1: IStep1;
   Step2: IStep2;
   Step3: IStep3;
+  Step4: {
+    id: number;
+  };
 }

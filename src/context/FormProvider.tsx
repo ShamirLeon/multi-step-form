@@ -34,7 +34,11 @@ export default function FormProvider({
       id: 3,
       addOns: [],
     },
+    Step4: {
+      id: 4,
+    },
   });
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {}, [stepsData.Step3]);
 
@@ -65,10 +69,12 @@ export default function FormProvider({
         subscriptionType,
         errorForm,
         stepsData,
+        isConfirmed,
         /* Set States */
         setCurrentStep,
         setSubscriptionType,
         setErrorForm,
+        setIsConfirmed,
         /* Functions */
         nextStep,
         handleStepData,

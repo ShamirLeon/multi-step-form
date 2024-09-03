@@ -5,11 +5,7 @@ import { FormContext } from "../context/FormContext";
 const Form = () => {
   const { stepsData } = useContext(FormContext);
 
-  const { formData, handleChange, errors } = useForm({
-    name: "",
-    email: "",
-    phone: "",
-  });
+  const { formData, handleChange, errors } = useForm(stepsData.Step1);
 
   return (
     <div>

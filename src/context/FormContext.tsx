@@ -9,6 +9,8 @@ const initialContext: IContext = {
   setCurrentStep: () => {},
   errorForm: true,
   setErrorForm: () => {},
+  isConfirmed: false,
+  setIsConfirmed: () => {},
   stepsData: {
     Step1: {
       id: 1,
@@ -17,13 +19,16 @@ const initialContext: IContext = {
       phone: "",
     },
     Step2: {
-      id: 1,
+      id: 2,
       plan: { id: 0, name: "", icon: "", price: { monthly: 0, yearly: 0 } },
       subscriptionType: "monthly",
     },
     Step3: {
-      id: 1,
+      id: 3,
       addOns: [],
+    },
+    Step4: {
+      id: 4,
     },
   },
   subscriptionType: "monthly",
