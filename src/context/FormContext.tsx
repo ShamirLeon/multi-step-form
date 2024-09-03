@@ -11,15 +11,18 @@ const initialContext: IContext = {
   setErrorForm: () => {},
   stepsData: {
     Step1: {
+      id: 1,
       name: "",
       email: "",
       phone: "",
     },
     Step2: {
+      id: 1,
       plan: { id: 0, name: "", icon: "", price: { monthly: 0, yearly: 0 } },
       subscriptionType: "monthly",
     },
     Step3: {
+      id: 1,
       addOns: [],
     },
   },

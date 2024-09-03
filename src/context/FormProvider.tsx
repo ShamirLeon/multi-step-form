@@ -20,21 +20,23 @@ export default function FormProvider({
   const [errorForm, setErrorForm] = useState(true);
   const [stepsData, setStepsData] = useState<IStepsData>({
     Step1: {
+      id: 1,
       name: "",
       email: "",
       phone: "",
     },
     Step2: {
+      id:2,
       plan: { id: 0, name: "", icon: "", price: { monthly: 0, yearly: 0 } },
       subscriptionType: "monthly",
     },
     Step3: {
+      id: 3,
       addOns: [],
     },
   });
 
   useEffect(() => {
-    console.log(stepsData.Step3);
   }, [stepsData.Step3]);
 
   const nextStep = () => {

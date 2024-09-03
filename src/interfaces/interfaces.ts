@@ -22,17 +22,20 @@ export interface IStep {
 }
 
 export interface IStep1 {
+  id: number;
   name: string;
   email: string;
   phone: string;
 }
 
 export interface IStep2 {
+  id: number;
   plan: IPlan;
   subscriptionType: "monthly" | "yearly";
 }
 
 export interface IStep3 {
+  id: number;
   addOns: IAddOn[];
 }
 
