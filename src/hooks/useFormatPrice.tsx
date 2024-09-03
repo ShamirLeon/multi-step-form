@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
+import { IAddOn } from "../interfaces/interfaces";
 
 export default function useFormatPrice() {
   const { subscriptionType } = useContext(FormContext);
@@ -8,13 +9,12 @@ export default function useFormatPrice() {
     return `$${price}/${subscriptionType === "monthly" ? "mo" : "yr"}`;
   };
 
-  const formatMonthlyPrice = (price: number) => {
-    return formatPrice(price);
+  const totalPrice = (planPrice: number, addOns: IAddOn[]) => {
+    const total =
+      planPrice +
+      addOns.reduce((acc, addOn) => acc + addOn.price[subscriptionType], 0);
+    return formatPrice(total);
   };
 
-  const formatYearlyPrice = (price: number) => {
-    return formatPrice(price * 12);
-  };
-
-  return { formatMonthlyPrice, formatYearlyPrice, formatPrice };
+  return { formatPrice, totalPrice };
 }

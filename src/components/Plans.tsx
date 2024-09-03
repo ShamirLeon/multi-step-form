@@ -25,7 +25,7 @@ export default function Plans() {
 
   const handleSelectPlan = (plan: IPlan) => {
     setPlanSelected(plan);
-    handleStepData("Step2", {id:2, plan, subscriptionType });
+    handleStepData("Step2", { id: 2, plan, subscriptionType });
   };
 
   return (

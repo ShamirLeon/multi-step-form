@@ -26,7 +26,7 @@ export default function FormProvider({
       phone: "",
     },
     Step2: {
-      id:2,
+      id: 2,
       plan: { id: 0, name: "", icon: "", price: { monthly: 0, yearly: 0 } },
       subscriptionType: "monthly",
     },
@@ -36,8 +36,7 @@ export default function FormProvider({
     },
   });
 
-  useEffect(() => {
-  }, [stepsData.Step3]);
+  useEffect(() => {}, [stepsData.Step3]);
 
   const nextStep = () => {
     setCurrentStep(
