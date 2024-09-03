@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { FormContext } from "../context/FormContext";
+import useFormatPrice from "../hooks/useFormatPrice";
 
 import { IPlan } from "../interfaces/interfaces";
 
 export default function Plans() {
   const [planSelected, setPlanSelected] = useState<IPlan | null>(null);
+  const { formatPrice } = useFormatPrice();
   const {
     plans,
     subscriptionType,
@@ -26,8 +28,6 @@ export default function Plans() {
     handleStepData("Step2", { plan, subscriptionType });
   };
 
-  const subscriptionTypeText = subscriptionType === "monthly" ? "mo" : "yr";
-
   return (
     <div>
       {plans.map((plan) => (
@@ -40,7 +40,7 @@ export default function Plans() {
           <div>
             <h3 className="text-lg font-bold text-marineBlue">{plan.name}</h3>
             <span className="text-coolGray">
-              ${plan.price[subscriptionType]}/{subscriptionTypeText}
+              {formatPrice(plan.price[subscriptionType])}
             </span>
           </div>
         </div>
