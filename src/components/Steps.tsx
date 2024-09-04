@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
 
 export default function Steps() {
-  const { steps, currentStep, setCurrentStep } = useContext(FormContext);
+  const { steps, currentStep, setCurrentStep, isConfirmed } =
+    useContext(FormContext);
   const isDisabled = (stepId: number) => {
     return currentStep.id < stepId;
   };
@@ -18,7 +19,7 @@ export default function Steps() {
           return (
             <div key={step.id}>
               <button
-                disabled={isDisabled(step.id)}
+                disabled={isDisabled(step.id) || isConfirmed}
                 className={`h-9 w-9 rounded-full border border-white font-bold md:hover:border-lightBlue md:hover:bg-lightBlue md:hover:text-marineBlue ${currentStep.id == step.id ? "bg-lightBlue text-marineBlue" : "text-white"}`}
                 onClick={() => setCurrentStep(step)}
               >
