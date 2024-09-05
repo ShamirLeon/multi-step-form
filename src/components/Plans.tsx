@@ -13,6 +13,7 @@ export default function Plans() {
     setSubscriptionType,
     stepsData,
     handleStepData,
+    error
   } = useContext(FormContext);
 
   const switchSubscriptionType = () => {
@@ -67,6 +68,13 @@ export default function Plans() {
           Yearly
         </span>
       </div>
+      {
+        error.step_id === 2 && (
+          <span className="text-strawberryRed text-sm mt-4 block">
+            {error.message}
+          </span>
+        )
+      }
     </div>
   );
 }

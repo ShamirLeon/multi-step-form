@@ -17,6 +17,7 @@ export default function FormProvider({
   const [subscriptionType, setSubscriptionType] = useState<
     "monthly" | "yearly"
   >("monthly");
+  const [error, setError] = useState({ step_id: 0, message: "" });
   const [errorForm, setErrorForm] = useState(true);
   const [stepsData, setStepsData] = useState<IStepsData>({
     Step1: {
@@ -67,6 +68,7 @@ export default function FormProvider({
         addOns,
         currentStep,
         subscriptionType,
+        error,
         errorForm,
         stepsData,
         isConfirmed,
@@ -75,6 +77,7 @@ export default function FormProvider({
         setSubscriptionType,
         setErrorForm,
         setIsConfirmed,
+        setError,
         /* Functions */
         nextStep,
         handleStepData,

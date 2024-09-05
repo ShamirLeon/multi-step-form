@@ -8,6 +8,8 @@ const initialContext: IContext = {
   currentStep: { id: 0, title: "", name: "", label: "", description: "" },
   setCurrentStep: () => {},
   errorForm: true,
+  error: { step_id: 0, message: "" },
+  setError: () => {},
   setErrorForm: () => {},
   isConfirmed: false,
   setIsConfirmed: () => {},

@@ -5,7 +5,7 @@ import useFormatPrice from "../hooks/useFormatPrice";
 import { IAddOn } from "../interfaces/interfaces";
 
 export default function AddOns() {
-  const { addOns, stepsData, handleStepData, subscriptionType } =
+  const { addOns, stepsData, handleStepData, subscriptionType, error } =
     useContext(FormContext);
   const [selectedAddOns, setSelectedAddOns] = useState<IAddOn[]>([
     ...stepsData.Step3.addOns,
@@ -77,6 +77,11 @@ export default function AddOns() {
           </span>
         </div>
       ))}
+    {
+      error.step_id === 3 && (
+        <p className="text-strawberryRed text-sm mt-4 block">{error.message}</p>
+      )
+    }
     </div>
   );
 }

@@ -2,6 +2,11 @@ export interface IContext {
   steps: IStep[];
   plans: IPlan[];
   addOns: IAddOn[];
+  error: {
+    step_id: number;
+    message: string;
+  };
+  setError: (value: { step_id: number, message: string } ) => void;
   currentStep: IStep;
   setCurrentStep: (value: IStep) => void;
   errorForm: boolean;

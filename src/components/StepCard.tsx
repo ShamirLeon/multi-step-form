@@ -17,15 +17,17 @@ export default function StepCard() {
     stepsData,
     isConfirmed,
     setIsConfirmed,
+    setError
   } = useContext(FormContext);
 
   const nextStepBtn = () => {
     if (currentStep.id == 1 && errorForm) {
       return;
     } else if (currentStep.id == 2 && !stepsData.Step2.plan.id) {
-      console.log(stepsData.Step2);
+      setError({ step_id: 2, message: "Please select a plan" });
       return;
     } else if (currentStep.id == 3 && !stepsData.Step3.addOns.length) {
+      setError({ step_id: 3, message: "Please select at least one add-on" });
       return;
     } else {
       nextStep();
