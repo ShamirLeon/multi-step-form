@@ -77,7 +77,7 @@ export default function StepCard() {
           )}
           {isLastStep() ? (
             <button
-              className="rounded-md bg-marineBlue px-5 py-3 text-white"
+              className="rounded-md bg-marineBlue px-5 py-3 text-white hover:bg-purplishBlue transition-all"
               onClick={() => setIsConfirmed(true)}
             >
               Confirm

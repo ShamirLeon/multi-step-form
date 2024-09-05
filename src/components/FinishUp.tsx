@@ -30,7 +30,7 @@ export default function FinishUp() {
                   {capitalizeFirstLetter(stepsData.Step2.subscriptionType)})
                 </h2>
                 <button
-                  className="text-coolGray underline"
+                  className="text-coolGray underline hover:text-marineBlue transition-all"
                   onClick={changePlan}
                 >
                   Change
