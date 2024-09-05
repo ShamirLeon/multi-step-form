@@ -13,7 +13,7 @@ export default function Plans() {
     setSubscriptionType,
     stepsData,
     handleStepData,
-    error
+    error,
   } = useContext(FormContext);
 
   const switchSubscriptionType = () => {
@@ -35,7 +35,7 @@ export default function Plans() {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className={`mb-4 flex items-center gap-4 rounded-md border border-lightGray p-4 ${planSelected?.id == plan.id || stepsData.Step2.plan.id == plan.id ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} cursor-pointer transition-all hover:border-purplishBlue hover:shadow-custom-shadow lg:flex-1 lg:flex-col lg:items-start lg:gap-6`}
+            className={`mb-4 flex items-center gap-4 rounded-md border border-lightGray p-4 ${planSelected?.id == plan.id || stepsData.Step2.plan.id == plan.id ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} cursor-pointer transition-all hover:border-purplishBlue hover:shadow-custom-shadow lg:flex-1 lg:flex-col lg:items-start lg:gap-6 short:gap-2 short:py-3`}
             onClick={() => handleSelectPlan(plan)}
           >
             <img src={`./images/icon-${plan.icon}.svg`} alt="" />
@@ -68,13 +68,11 @@ export default function Plans() {
           Yearly
         </span>
       </div>
-      {
-        error.step_id === 2 && (
-          <span className="text-strawberryRed text-sm mt-4 block">
-            {error.message}
-          </span>
-        )
-      }
+      {error.step_id === 2 && (
+        <span className="mt-4 block text-sm text-strawberryRed">
+          {error.message}
+        </span>
+      )}
     </div>
   );
 }

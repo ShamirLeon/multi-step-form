@@ -77,11 +77,9 @@ export default function AddOns() {
           </span>
         </div>
       ))}
-    {
-      error.step_id === 3 && (
-        <p className="text-strawberryRed text-sm mt-4 block">{error.message}</p>
-      )
-    }
+      {error.step_id === 3 && (
+        <p className="mt-4 block text-sm text-strawberryRed">{error.message}</p>
+      )}
     </div>
   );
 }

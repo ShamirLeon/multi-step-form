@@ -23,7 +23,7 @@ export default function Steps() {
         />
       </div>
 
-      <div className="relative z-10 flex justify-center gap-4 py-10 lg:h-full lg:flex-col lg:justify-start lg:gap-6 lg:p-8">
+      <div className="relative z-10 flex justify-center gap-4 py-10 lg:h-full lg:flex-col lg:justify-start lg:gap-6 lg:p-8 short:py-5">
         {steps.map((step) => {
           return (
             <div key={step.id} className="lg:flex lg:items-center lg:gap-4">

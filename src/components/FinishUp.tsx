@@ -30,7 +30,7 @@ export default function FinishUp() {
                   {capitalizeFirstLetter(stepsData.Step2.subscriptionType)})
                 </h2>
                 <button
-                  className="text-coolGray underline hover:text-marineBlue transition-all"
+                  className="text-coolGray underline transition-all hover:text-marineBlue"
                   onClick={changePlan}
                 >
                   Change
@@ -66,7 +66,7 @@ export default function FinishUp() {
           </div>
         </section>
       ) : (
-        <section className="flex h-full w-full flex-col items-center justify-center gap-4 lg:m-auto lg:text-xl lg:h-[30rem]">
+        <section className="flex h-full w-full flex-col items-center justify-center gap-4 lg:m-auto lg:h-[30rem] lg:text-xl">
           <img
             src="./images/icon-thank-you.svg"
             alt=""

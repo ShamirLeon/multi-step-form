@@ -17,7 +17,7 @@ export default function StepCard() {
     stepsData,
     isConfirmed,
     setIsConfirmed,
-    setError
+    setError,
   } = useContext(FormContext);
 
   const nextStepBtn = () => {
@@ -51,10 +51,10 @@ export default function StepCard() {
       <div className="relative z-10 rounded-md bg-white p-8 lg:h-auto">
         {!isConfirmed && (
           <>
-            <h2 className="mb-3 text-3xl font-bold text-marineBlue">
+            <h2 className="mb-3 text-3xl font-bold text-marineBlue short:text-xl">
               {currentStep.label}
             </h2>
-            <p className="mb-3 text-lg text-coolGray">
+            <p className="short:text-md mb-3 text-lg text-coolGray">
               {currentStep.description}
             </p>
           </>
@@ -65,7 +65,7 @@ export default function StepCard() {
         {currentStep.id == 4 && <FinishUp />}
       </div>
       {!isConfirmed && (
-        <div className="absolute bottom-0 left-0 flex w-full justify-between bg-white p-4 lg:relative lg:px-8">
+        <div className="absolute bottom-0 left-0 z-50 flex w-full justify-between bg-white p-4 lg:relative lg:px-8">
           {currentStep.id == 1 && <div></div>}
           {steps.findIndex(({ id }) => id == currentStep.id) != 0 && (
             <button
@@ -77,7 +77,7 @@ export default function StepCard() {
           )}
           {isLastStep() ? (
             <button
-              className="rounded-md bg-marineBlue px-5 py-3 text-white hover:bg-purplishBlue transition-all"
+              className="rounded-md bg-marineBlue px-5 py-3 text-white transition-all hover:bg-purplishBlue"
               onClick={() => setIsConfirmed(true)}
             >
               Confirm

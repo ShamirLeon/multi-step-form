@@ -6,6 +6,10 @@ export default {
       boxShadow: {
         "custom-shadow": "0px 0px 30px -9px rgb(88, 80, 236, 0.8)",
       },
+      screens: {
+        tall: { raw: "(min-height: 800px)" },
+        short: { raw: "(max-height: 670px)" },
+      },
     },
     colors: {
       black: "#000",

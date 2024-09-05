@@ -13,7 +13,7 @@ const Form = () => {
         <div className="form-group">
           <label htmlFor="name" className="">
             <span className="form-label">Name</span>
-            <span className="float-right inline-block text-strawberryRed">
+            <span className="float-right inline-block text-strawberryRed short:float-left short:text-sm">
               {errors.name}
             </span>
             <input
@@ -31,7 +31,7 @@ const Form = () => {
         <div className="form-group">
           <label htmlFor="email" className="">
             <span className="form-label">Email Address</span>
-            <span className="float-right inline-block text-strawberryRed">
+            <span className="float-right inline-block text-strawberryRed short:text-sm">
               {errors.email}
             </span>
             <input
@@ -49,7 +49,7 @@ const Form = () => {
         <div className="form-group">
           <label htmlFor="phone" className="">
             <span className="form-label">Phone Number</span>
-            <span className="float-right inline-block text-strawberryRed">
+            <span className="float-right inline-block text-strawberryRed short:float-left short:text-[12px]">
               {errors.phone}
             </span>
             <input
@@ -64,7 +64,9 @@ const Form = () => {
           </label>
         </div>
 
-        <span className="text-sm text-strawberryRed">{errors.form}</span>
+        <span className="text-sm text-strawberryRed short:text-sm">
+          {errors.form}
+        </span>
       </form>
     </div>
   );
