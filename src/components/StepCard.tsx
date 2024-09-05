@@ -65,7 +65,7 @@ export default function StepCard() {
         {currentStep.id == 4 && <FinishUp />}
       </div>
       {!isConfirmed && (
-        <div className="absolute bottom-0 left-0 z-50 flex w-full justify-between bg-white p-4 lg:relative lg:px-8">
+        <div className="fixed bottom-0 left-0 z-50 flex w-full justify-between bg-white p-4 lg:relative lg:px-8">
           {currentStep.id == 1 && <div></div>}
           {steps.findIndex(({ id }) => id == currentStep.id) != 0 && (
             <button
