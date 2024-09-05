@@ -5,9 +5,9 @@ import FormProvider from "./context/FormProvider";
 function App() {
   return (
     <>
-      <div className="h-[100vh] bg-pastelBlue font-Ubuntu lg:flex lg:justify-center lg:items-center">
+      <div className="h-[100vh] bg-pastelBlue font-Ubuntu lg:flex lg:items-center lg:justify-center">
         <FormProvider>
-          <div className="lg:flex lg:p-[12px] lg:bg-white lg:rounded-[24px] lg:h-[41rem]">
+          <div className="lg:flex lg:h-[38rem] lg:rounded-[24px] lg:bg-white lg:p-[12px]">
             <Steps />
             <StepCard />
           </div>

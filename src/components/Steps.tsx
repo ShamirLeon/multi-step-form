@@ -9,21 +9,21 @@ export default function Steps() {
     return currentStep.id < stepId;
   };
   return (
-    <div className="relative lg:rounded-[12px] lg:overflow-hidden lg:w-[18rem] lg:h-full">
+    <div className="relative lg:h-full lg:w-[18rem] lg:overflow-hidden lg:rounded-[12px]">
       <div className="absolute top-0 z-0 h-[100%] w-full">
         <img
           src="./images/bg-sidebar-desktop.svg"
-          className="hidden md:block w-full h-full object-cover"
+          className="hidden h-full w-full object-cover md:block"
           alt="sidebar background desktop"
         />
         <img
           src="./images/bg-sidebar-mobile.svg"
-          className="block md:hidden object-cover w-full h-[200%]"
+          className="block h-[200%] w-full object-cover md:hidden"
           alt="sidebar background mobile"
         />
       </div>
 
-      <div className="relative z-10 flex justify-center gap-4 py-10 lg:flex-col lg:h-full lg:justify-start lg:p-8 lg:gap-6">
+      <div className="relative z-10 flex justify-center gap-4 py-10 lg:h-full lg:flex-col lg:justify-start lg:gap-6 lg:p-8">
         {steps.map((step) => {
           return (
             <div key={step.id} className="lg:flex lg:items-center lg:gap-4">
@@ -35,8 +35,10 @@ export default function Steps() {
                 {step.id}
               </button>
               <div className="hidden lg:block">
-                <span className="text-coolGray text-sm">{step.title.toUpperCase()}</span>
-                <h2 className="text-white font-bold">{step.name}</h2>
+                <span className="text-sm text-coolGray">
+                  {step.title.toUpperCase()}
+                </span>
+                <h2 className="font-bold text-white">{step.name}</h2>
               </div>
             </div>
           );

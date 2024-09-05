@@ -45,8 +45,8 @@ export default function StepCard() {
   };
 
   return (
-    <div className="px-4 lg:flex-[1] lg:relative lg:w-[600px] lg:pr-0 lg:h-full">
-      <div className="relative z-10 rounded-md bg-white p-8 lg:h-full">
+    <div className="px-4 lg:relative lg:h-full lg:w-[600px] lg:flex-[1] lg:pr-0">
+      <div className="relative z-10 rounded-md bg-white p-8 lg:h-auto">
         {!isConfirmed && (
           <>
             <h2 className="mb-3 text-3xl font-bold text-marineBlue">
@@ -63,12 +63,8 @@ export default function StepCard() {
         {currentStep.id == 4 && <FinishUp />}
       </div>
       {!isConfirmed && (
-        <div className="absolute bottom-0 left-0 w-full bg-white p-4 lg:px-8 lg:relative lg:flex lg:justify-between">
-          {
-            currentStep.id == 1 && (
-              <div></div>
-            )
-          }
+        <div className="absolute bottom-0 left-0 flex w-full justify-between bg-white p-4 lg:relative lg:px-8">
+          {currentStep.id == 1 && <div></div>}
           {steps.findIndex(({ id }) => id == currentStep.id) != 0 && (
             <button
               className="py-3 text-coolGray transition-all hover:text-purplishBlue"

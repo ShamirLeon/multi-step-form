@@ -19,9 +19,9 @@ export default function FinishUp() {
   };
 
   return (
-    <div className="lg:h-full">
+    <div className="lg:flex lg:items-center lg:justify-center">
       {!isConfirmed ? (
-        <section>
+        <section className="lg:flex-1">
           <div className="rounded-md bg-pastelBlue bg-opacity-30 p-4">
             <div className="flex items-center justify-between border-b-[1px] border-b-coolGray pb-2">
               <div>
@@ -66,8 +66,12 @@ export default function FinishUp() {
           </div>
         </section>
       ) : (
-        <section className="flex flex-col items-center justify-center h-full w-full gap-4 lg:text-xl">
-          <img src="./images/icon-thank-you.svg" alt="" className="m-auto lg:m-0 lg:w-28" />
+        <section className="flex h-full w-full flex-col items-center justify-center gap-4 lg:m-auto lg:text-xl">
+          <img
+            src="./images/icon-thank-you.svg"
+            alt=""
+            className="m-auto lg:m-0 lg:w-28"
+          />
           <h2 className="mt-4 text-center text-2xl font-bold text-marineBlue lg:m-0 lg:text-3xl">
             Thank you!
           </h2>

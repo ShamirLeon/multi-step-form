@@ -30,21 +30,23 @@ export default function Plans() {
 
   return (
     <div>
-      {plans.map((plan) => (
-        <div
-          key={plan.id}
-          className={`mb-4 flex items-center gap-4 rounded-md border border-lightGray p-4 ${planSelected?.id == plan.id || stepsData.Step2.plan.id == plan.id ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} hover:shadow-custom-shadow cursor-pointer hover:border-purplishBlue transition-all`}
-          onClick={() => handleSelectPlan(plan)}
-        >
-          <img src={`./images/icon-${plan.icon}.svg`} alt="" />
-          <div>
-            <h3 className="text-lg font-bold text-marineBlue">{plan.name}</h3>
-            <span className="text-coolGray">
-              {formatPrice(plan.price[subscriptionType])}
-            </span>
+      <section className="lg:mb-4 lg:flex lg:w-full lg:justify-between lg:gap-6">
+        {plans.map((plan) => (
+          <div
+            key={plan.id}
+            className={`mb-4 flex items-center gap-4 rounded-md border border-lightGray p-4 ${planSelected?.id == plan.id || stepsData.Step2.plan.id == plan.id ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} cursor-pointer transition-all hover:border-purplishBlue hover:shadow-custom-shadow lg:flex-1 lg:flex-col lg:items-start lg:gap-6`}
+            onClick={() => handleSelectPlan(plan)}
+          >
+            <img src={`./images/icon-${plan.icon}.svg`} alt="" />
+            <div>
+              <h3 className="text-lg font-bold text-marineBlue">{plan.name}</h3>
+              <span className="text-coolGray">
+                {formatPrice(plan.price[subscriptionType])}
+              </span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </section>
       <div className="flex justify-center gap-4 rounded-md bg-purplishBlue bg-opacity-10 py-4">
         <span
           className={`${subscriptionType == "monthly" ? "text-marineBlue" : "text-coolGray"} transition-colors`}
