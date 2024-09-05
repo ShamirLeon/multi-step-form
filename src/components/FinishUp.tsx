@@ -19,7 +19,7 @@ export default function FinishUp() {
   };
 
   return (
-    <div className="">
+    <div className="lg:h-full">
       {!isConfirmed ? (
         <section>
           <div className="rounded-md bg-pastelBlue bg-opacity-30 p-4">
@@ -66,9 +66,9 @@ export default function FinishUp() {
           </div>
         </section>
       ) : (
-        <section>
-          <img src="./images/icon-thank-you.svg" alt="" className="m-auto" />
-          <h2 className="mt-4 text-center text-2xl font-bold text-marineBlue">
+        <section className="flex flex-col items-center justify-center h-full w-full gap-4 lg:text-xl">
+          <img src="./images/icon-thank-you.svg" alt="" className="m-auto lg:m-0 lg:w-28" />
+          <h2 className="mt-4 text-center text-2xl font-bold text-marineBlue lg:m-0 lg:text-3xl">
             Thank you!
           </h2>
           <p className="text-center text-coolGray">

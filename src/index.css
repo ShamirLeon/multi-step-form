@@ -32,7 +32,7 @@
 
 @layer components {
   .inputs {
-    @apply mb-6 w-full rounded-md border border-lightGray p-3 font-Ubuntu outline-none placeholder:font-bold;
+    @apply mb-6 w-full rounded-md border border-lightGray p-3 font-Ubuntu outline-none placeholder:font-bold ;
   }
 
   .form-label {

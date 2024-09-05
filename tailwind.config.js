@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        "custom-shadow": "0px 0px 30px -9px rgb(88, 80, 236, 0.8)",
+      },
+    },
     colors: {
       black: "#000",
       transparent: "trasparent",

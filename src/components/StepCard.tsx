@@ -22,7 +22,8 @@ export default function StepCard() {
   const nextStepBtn = () => {
     if (currentStep.id == 1 && errorForm) {
       return;
-    } else if (currentStep.id == 2 && !stepsData.Step2.plan) {
+    } else if (currentStep.id == 2 && !stepsData.Step2.plan.id) {
+      console.log(stepsData.Step2);
       return;
     } else if (currentStep.id == 3 && !stepsData.Step3.addOns.length) {
       return;
@@ -44,8 +45,8 @@ export default function StepCard() {
   };
 
   return (
-    <div className="px-4">
-      <div className="relative z-10 rounded-md bg-white p-8">
+    <div className="px-4 lg:flex-[1] lg:relative lg:w-[600px] lg:pr-0 lg:h-full">
+      <div className="relative z-10 rounded-md bg-white p-8 lg:h-full">
         {!isConfirmed && (
           <>
             <h2 className="mb-3 text-3xl font-bold text-marineBlue">
@@ -62,7 +63,12 @@ export default function StepCard() {
         {currentStep.id == 4 && <FinishUp />}
       </div>
       {!isConfirmed && (
-        <div className="absolute bottom-0 left-0 w-full bg-white p-4">
+        <div className="absolute bottom-0 left-0 w-full bg-white p-4 lg:px-8 lg:relative lg:flex lg:justify-between">
+          {
+            currentStep.id == 1 && (
+              <div></div>
+            )
+          }
           {steps.findIndex(({ id }) => id == currentStep.id) != 0 && (
             <button
               className="py-3 text-coolGray transition-all hover:text-purplishBlue"
@@ -73,14 +79,14 @@ export default function StepCard() {
           )}
           {isLastStep() ? (
             <button
-              className="float-right rounded-md bg-marineBlue px-5 py-3 text-white"
+              className="rounded-md bg-marineBlue px-5 py-3 text-white"
               onClick={() => setIsConfirmed(true)}
             >
               Confirm
             </button>
           ) : (
             <button
-              className="float-right rounded-md bg-marineBlue px-5 py-3 text-white"
+              className="rounded-md bg-marineBlue px-5 py-3 text-white"
               onClick={nextStepBtn}
             >
               Next Step

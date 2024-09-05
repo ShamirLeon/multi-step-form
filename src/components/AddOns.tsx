@@ -25,6 +25,18 @@ export default function AddOns() {
         );
       }
     };
+    const handleDivClick = (id: number) => {
+      setSelectedAddOns((prevSelectedAddOns) => {
+        const isAlreadySelected = prevSelectedAddOns.some(
+          (addOn) => addOn.id === id
+        );
+        if (isAlreadySelected) {
+          return prevSelectedAddOns.filter((addOn) => addOn.id !== id);
+        } else {
+          return [...prevSelectedAddOns, addOns.find((addOn) => addOn.id === id)!];
+        }
+      });
+    };
 
   useEffect(() => {
     handleStepData("Step3", { addOns: selectedAddOns });
@@ -42,7 +54,8 @@ export default function AddOns() {
       {addOns.map((addOn) => (
         <div
           key={addOn.id}
-          className={`mb-2 grid grid-cols-[.1fr,1fr,.3fr] items-center gap-4 rounded-md border border-lightGray p-3 ${isAddOnSelected(addOn.id) ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} `}
+          className={`mb-2 lg:mb-6 grid grid-cols-[.1fr,1fr,.3fr] items-center gap-4 rounded-md border border-lightGray p-3 ${isAddOnSelected(addOn.id) ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} hover:shadow-custom-shadow cursor-pointer hover:border-purplishBlue transition-all`}
+          onClick={() => handleDivClick(addOn.id)}
         >
           <input
             type="checkbox"

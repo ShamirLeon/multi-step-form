@@ -8,7 +8,7 @@ const Form = () => {
   const { formData, handleChange, errors } = useForm(stepsData.Step1);
 
   return (
-    <div>
+    <div className="lg:h-full">
       <form action="">
         <div className="form-group">
           <label htmlFor="name" className="">

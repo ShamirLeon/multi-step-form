@@ -33,7 +33,7 @@ export default function Plans() {
       {plans.map((plan) => (
         <div
           key={plan.id}
-          className={`mb-4 flex items-center gap-4 rounded-md border border-lightGray p-4 ${planSelected?.id == plan.id || stepsData.Step2.plan.id == plan.id ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""}`}
+          className={`mb-4 flex items-center gap-4 rounded-md border border-lightGray p-4 ${planSelected?.id == plan.id || stepsData.Step2.plan.id == plan.id ? "border-purplishBlue bg-purplishBlue bg-opacity-10" : ""} hover:shadow-custom-shadow cursor-pointer hover:border-purplishBlue transition-all`}
           onClick={() => handleSelectPlan(plan)}
         >
           <img src={`./images/icon-${plan.icon}.svg`} alt="" />

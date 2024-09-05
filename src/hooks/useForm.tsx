@@ -22,7 +22,7 @@ const useForm = (initialValues: IFormProps) => {
     if (name.length < 2 || name.length > 50) {
       return "Name must be between 2 and 50 characters.";
     }
-    const nameRegex = /^[a-zA-Z\s]+$/;
+    const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
     return !nameRegex.test(name)
       ? "Name can only contain letters and spaces."
       : "";
