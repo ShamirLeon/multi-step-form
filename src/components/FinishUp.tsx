@@ -66,7 +66,7 @@ export default function FinishUp() {
           </div>
         </section>
       ) : (
-        <section className="flex h-full w-full flex-col items-center justify-center gap-4 lg:m-auto lg:text-xl">
+        <section className="flex h-full w-full flex-col items-center justify-center gap-4 lg:m-auto lg:text-xl lg:h-[30rem]">
           <img
             src="./images/icon-thank-you.svg"
             alt=""
